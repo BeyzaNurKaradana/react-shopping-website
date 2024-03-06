@@ -3,11 +3,12 @@ body{
     padding: 0;
     box-sizing: border-box;
    
-    /* background-image: url() */
-    /* background: rgb(0,0,0);
+    
+    /* background: rgb(204,193,203);
+    background: linear-gradient(90deg, rgba(204,193,203,1) 0%, rgba(63,94,251,1) 100%); */
 
-    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(189,206,208,1) 0%); */
-    background: rgb(204,193,203);
-    background: linear-gradient(90deg, rgba(204,193,203,1) 0%, rgba(63,94,251,1) 100%);
+    background: rgb(22,26,66);
+    background: linear-gradient(90deg, rgba(22,26,66,1) 0%, rgba(74,79,107,1) 0%);
+
 
 }

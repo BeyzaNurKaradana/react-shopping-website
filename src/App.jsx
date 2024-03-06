@@ -16,9 +16,9 @@ const shops = [
 ];
 
 const categories = [
-  { id: 1, name: "Elektronik" },
-  { id: 2, name: "Oyuncak" },
-  { id: 3, name: "Şarküteri" },
+  { id: 1, name: "Electronic" },
+  { id: 2, name: "Toy" },
+  { id: 3, name: "Delicatessen" },
 ];
 
 const IconButton = ({ icon }) => (
@@ -43,7 +43,7 @@ function App() {
 
   const addProducts = () => {
     if (!productInput || !selectedShop || !selectedCategory) {
-      alert("Lütfen ürün adı, market ve kategori seçin.");
+      alert("Please select product name, market and category.");
       return;
     }
     const newProduct = {
@@ -138,7 +138,7 @@ function App() {
       <Form>
         <Form.Group>
           <Form.Label className="label-head" htmlFor="products">
-            Alınacaklar
+            Shopping List
           </Form.Label>
           <Form.Control
             id="products"
@@ -154,7 +154,7 @@ function App() {
           value={selectedShop}
           className="form-select"
         >
-          <option>Market seç</option>
+          <option>Select Supermarket</option>
           {shops.map((shop) => (
             <option key={shop.id} value={shop.id}>
               {shop.name}
@@ -166,7 +166,7 @@ function App() {
           value={selectedCategory}
           className="form-select"
         >
-          <option>Kategori seç</option>
+          <option>Select Category</option>
           {categories.map((category) => (
             <option key={category.id} value={category.id}>
               {category.name}
@@ -175,7 +175,7 @@ function App() {
         </Form.Select>
 
         <button className="button m-3 px-5" onClick={addProducts} type="button">
-          Ürün Ekle
+          Add Product
         </button>
       </Form>
 
@@ -185,7 +185,7 @@ function App() {
           onClose={() => setShowAlert(false)}
           dismissible
         >
-          Alışveriş Tamamlandı!
+          Shopping Completed!
         </Alert>
       )}
       {confettiVisible && <Confetti />}
@@ -193,11 +193,11 @@ function App() {
       <Table className="table-container">
         <thead>
           <tr>
-            <th>Ürün Adı</th>
+            <th>Product Name</th>
             <th>Market</th>
-            <th>Kategori</th>
-            <th>Durum</th>
-            <th>İşlemler</th>
+            <th>Category</th>
+            <th>Situation</th>
+            <th>Transactions</th>
           </tr>
         </thead>
         <tbody>
@@ -218,7 +218,7 @@ function App() {
                 }
               </td>
               <td onClick={() => handleBuy(product.id)}>
-                {product.isBought ? "Satın Alındı" : "Satın Al"}
+                {product.isBought ? "Bought" : "Buy"}
               </td>
               <td onClick={() => handleDelete(product.id)}>
                 <IconButton icon="✖️" />
@@ -231,7 +231,7 @@ function App() {
       <hr />
 
       <div>
-        <h1 className="label-head">Ürünleri Filtrele</h1>
+        <h1 className="label-head">Filter Products</h1>
 
         <FuzzySearch
           className={"mx-auto"}
@@ -277,39 +277,39 @@ function App() {
             checked={filteredStatus === "all"}
             onChange={() => setFilteredStatus("all")}
           />{" "}
-          Tümü
+          All
           <input
             type="radio"
             value="bought"
             checked={filteredStatus === "bought"}
             onChange={() => setFilteredStatus("bought")}
           />{" "}
-          Satın Alınanlar
+          Purchases
           <input
             type="radio"
             value="notBought"
             checked={filteredStatus === "notBought"}
             onChange={() => setFilteredStatus("notBought")}
           />{" "}
-          Satın Alınmayanlar
+          Not Purchased
         </div>
         <button
           className="button m-3 px-5"
           onClick={startFiltering}
           type="button"
         >
-          Ürünleri Filtrele
+          Add Filter Products
         </button>
       </div>
 
       <Table className="table-container">
         <thead>
           <tr>
-            <th>Ürün Adı</th>
+            <th>Product Name</th>
             <th>Market</th>
-            <th>Kategori</th>
-            <th>Durum</th>
-            <th>İşlemler</th>
+            <th>Category</th>
+            <th>Situation</th>
+            <th>Transactions</th>
           </tr>
         </thead>
         <tbody>
@@ -330,7 +330,7 @@ function App() {
                 }
               </td>
               <td onClick={() => handleBuy(product.id)}>
-                {product.isBought ? "Satın Alındı" : "Satın Al"}
+                {product.isBought ? "Bought" : "Buy"}
               </td>
               <td onClick={() => handleDelete(product.id)}>
                 <IconButton icon="✖️" />
