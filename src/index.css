@@ -1,1 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+    /* background-image: url() */
+    /* background: rgb(0,0,0);
 
+    background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(189,206,208,1) 0%); */
+    background: rgb(204,193,203);
+    background: linear-gradient(90deg, rgba(204,193,203,1) 0%, rgba(63,94,251,1) 100%);
+
+}
