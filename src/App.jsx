@@ -263,7 +263,7 @@ function App() {
           onChange={(e) => setFilteredCategoryId(e.target.value)}
           value={filteredCategoryId}
         >
-          <option value="">Kategori</option>
+          <option value="">Category</option>
           {categories.map((category) => (
             <option key={category.id} value={category.id}>
               {category.name}
