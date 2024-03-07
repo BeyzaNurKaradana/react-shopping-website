@@ -141,6 +141,7 @@ function App() {
             Shopping List
           </Form.Label>
           <Form.Control
+            placeholder="Enter product name"
             id="products"
             type="text"
             className="input"
